@@ -39,6 +39,16 @@ sha256sum NVIDIA-Linux-x86_64-610.43.03.run    # must print 45e2d4c1...e9612ed39
 nvidia-driver-update /hive-drivers-pack/NVIDIA-Linux-x86_64-610.43.03.run
 ```
 
+## NEB dataset file
+
+Release [`neb-datasets-790b57fb`](https://github.com/0xHashRaptor/ForgeMinerTools/releases/tag/neb-datasets-790b57fb): `neb-datasets.bin`,
+the NEB main network's dataset file (16 087 037 bytes; BLAKE3 `790b57fbd830f3dcbe7de9d1146aa89a0a20799118e30dd48a343a5c98f19e72`,
+SHA-256 `57e22a4b8aacecb2ebae62f76307ddccb04198ed5c4ba15c1dee90ca7a7c2174`). The same file as the NEB project's release
+[v1.0.2](https://github.com/SilasEigen/neb/releases/tag/v1.0.2), under the Apache License 2.0 (`NEB-LICENSE`).
+
+ForgeMiner reads it next to the miner; when it is not there, ForgeMiner 2.1.2 and newer download it once (from here, then from the
+NEB project), check its BLAKE3 and keep it.
+
 ---
 
 ## Драйвер NVIDIA 610.43.03 (для разлока CMP)
@@ -49,3 +59,9 @@ NVIDIA доступен не из всех сетей, поэтому устан
 
 ForgeMiner 2.1.2 и новее скачивают его, проверяют сумму и ставят одной командой: `sudo forge --cmp-driver`, затем перезагрузка и
 `sudo forge --cmp-install`.
+
+## Файл датасетов NEB
+
+`neb-datasets.bin` (релиз `neb-datasets-790b57fb`) — файл датасетов основной сети NEB, тот же, что в релизе проекта NEB v1.0.2
+(лицензия Apache 2.0, `NEB-LICENSE`). Если рядом с майнером его нет, ForgeMiner 2.1.2 и новее один раз скачивают его отсюда (затем
+у проекта NEB), проверяют BLAKE3 и сохраняют.
